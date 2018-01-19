@@ -1,0 +1,40 @@
+.main-link {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem 0.2rem 0;
+    margin: 1rem 1rem 1rem 0;
+    color: #ee5577;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.main-link:hover {
+    color: #bb2244;
+    /*border-bottom: 4px solid #ee5577;*/
+    text-decoration: none;
+}
+
+.main-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #ee5577;
+    transition: all .3s;
+}
+
+.main-link:hover::after {
+    width: 100%;
+}
+
+.main-table {
+    background-color: #fafafa;
+    display: block;
+    padding: 1rem;
+}
+
+.main-table th {
+    font-size: 1.2rem;
+    color: #666666;
+    padding-bottom: 1rem;
+}
