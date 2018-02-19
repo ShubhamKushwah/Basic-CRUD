@@ -1,6 +1,12 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .main-link {
     font-size: 1.2rem;
-    padding: 0.2rem 0.5rem 0.2rem 0;
+    padding: 0.5rem;
     margin: 1rem 1rem 1rem 0;
     color: #ee5577;
     display: inline-block;
@@ -8,9 +14,16 @@
     transition: all .2s ease-in-out;
 }
 
+.small-title {
+    font-size: 0.9rem;
+}
+
+.small-title:hover {
+    color: #ee5577;
+}
+
 .main-link:hover {
     color: #bb2244;
-    /*border-bottom: 4px solid #ee5577;*/
     text-decoration: none;
 }
 
@@ -18,23 +31,97 @@
     content: '';
     display: block;
     width: 0;
+    border-radius: 50%;
     height: 4px;
     background: #ee5577;
     transition: all .3s;
+}
+
+.main-link:focus {
+    outline: none;
 }
 
 .main-link:hover::after {
     width: 100%;
 }
 
+.table-container {
+    height: 500px;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    border-radius: .5rem;
+    padding: 1rem 0;
+    overflow: scroll;
+}
+
 .main-table {
-    background-color: #fafafa;
-    display: block;
     padding: 1rem;
+    width: 100%;
 }
 
 .main-table th {
     font-size: 1.2rem;
     color: #666666;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+.main-table tr:hover {
+    background-color: #fafafa;
+}
+
+.main-table td {
+    padding: 1rem 0;
+}
+
+.main-table th:first-child {
+    padding-left: 2rem;
+}
+
+.main-table td:first-child {
+    width: 120px;
+    padding-left: 2rem;
+}
+
+.form-table {
+    padding: 0.5rem;
+    display: block;
+}
+
+.form-table td {
+    vertical-align: top;
+}
+
+.form-table label {
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.form-table input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #aaaaaa;
+}
+
+.form-table input:hover {
+    border-color: #777777;
+}
+
+.form-table input:focus {
+    outline: none;
+    border-color: green;
+    box-shadow: inset 0 0 2px yellowgreen;
+}
+
+/* Error */
+
+.form-table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.form-table li {
+    list-style: none;
+    margin: 0.5rem 0;
+    color: #ee5577;
 }

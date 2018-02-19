@@ -1,0 +1,36 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create New record</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form class="new-form" action="/" method="POST">
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <table class="form-table">
+                        {% for field in form %}
+                            <tr>
+                                <td>
+                                    {{ field.label_tag }}
+                                </td>
+                                <td>
+                                    {{ field }}
+                                    <p>{{ field.errors }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input id="save_btn" type="submit" class="btn btn-primary" value="{{ submit_btn }}"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

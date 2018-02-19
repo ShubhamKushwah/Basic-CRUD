@@ -1,0 +1,24 @@
+{% extends 'programmer/base.html' %}
+
+{% block content %}
+
+    <form class="new-form" action="" method="POST">
+        {% csrf_token %}
+        <table class="form-table">
+            {% for field in form %}
+                <tr>
+                    <td>
+                        {{ field.label_tag }}
+                    </td>
+                    <td>
+                        {{ field }}
+                        <p>{{ field.errors }}</p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input id="save_btn" type="submit" class="btn btn-primary" value="{{ submit_btn }}"/>
+    </form>
+
+{% endblock %}

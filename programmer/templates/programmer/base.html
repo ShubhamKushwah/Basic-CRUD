@@ -4,35 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {% load staticfiles %}
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
-          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'programmer/bootstrap/css/bootstrap.min.css' %}">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
-    {% load staticfiles %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'programmer/style-base.css' %}">
 
     <title>Home</title>
 </head>
 <body>
 
-<div style="margin-top: 2rem;" class="container">
-    <h3 class="text-primary">CRUD</h3>
-    <a href="#" class="main-link"><i class="fas fa-plus-circle"></i> Create New</a>
-    <a href="#" class="main-link"><i class="fas fa-pencil-alt"></i> Update</a>
-    <a href="#" class="main-link"><i class="fas fa-trash"></i> Delete</a>
-    <a href="#" class="main-link"><i class="fas fa-user"></i> Admin</a>
+<div style="padding-top: 2rem;" class="container">
+    <a href="/"><h3 class="text-primary">C<span class="small-title">REATE</span>R<span class="small-title">EAD</span>U<span
+            class="small-title">PDATE</span>D<span class="small-title">ELETE</span></h3></a>
     {% block content %}
     {% endblock %}
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+<script src="{% static 'programmer/bootstrap/js/bootstrap.min.js' %}"
         integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
 

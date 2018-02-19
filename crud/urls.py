@@ -20,6 +20,6 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
 
-    url(r'^$', include('programmer.urls')),
+    url(r'^', include('programmer.urls', namespace='programmer')),
 
 ]

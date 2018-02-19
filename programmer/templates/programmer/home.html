@@ -1,18 +1,29 @@
 {% extends 'programmer/base.html' %}
 
 {% block content %}
-    <table class="main-table">
-        <tr>
-            <th style="width: 100px;">S.No.</th>
-            <th style="width: 300px;">Username</th>
-            <th>Phone Number</th>
-        </tr>
-        {% for obj in object_list %}
+
+    <a data-toggle="modal" href="/" class="main-link" data-target="#exampleModalCenter"><i
+            class="fas fa-plus-circle"></i> Create New Record</a>
+    <a style="float: right;" href="/admin" class="main-link"><i class="fas fa-user"></i> Admin</a>
+
+    {% include 'programmer/snippets/modal.html' %}
+
+    <div class="table-container">
+        <table class="main-table">
             <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ obj.username }}</td>
-                <td>{{ obj.phone_no }}</td>
+                <th style="width: 100px;">S.No.</th>
+                <th style="width: 300px;">Username</th>
+                <th>Phone Number</th>
+                <th>Task</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for obj in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'programmer:update' pk=obj.pk %}">{{ obj.username }}</a></td>
+                    <td>{{ obj.phone_no }}</td>
+                    <td style="width: 50px; padding-right: 1rem; text-align: center;"><a style="font-size: 1.2rem; color: #ee5577;" href="/{{ obj.pk }}/delete">Delete <i class="far fa-trash-alt"></i></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
